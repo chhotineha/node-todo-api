@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var ToDO = mongoose.model('ToDo', {
+var ToDOSchema = new mongoose.Schema({
     firstName: {
         type: String,
         require: true,
@@ -17,6 +17,4 @@ var ToDO = mongoose.model('ToDo', {
     }
 
 });
-module.exports = {
-    ToDo: ToDO
-}
+module.exports = mongoose.model('ToDo', ToDOSchema);
